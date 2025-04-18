@@ -1,0 +1,782 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: brown;
+}
+
+.pl-logo {
+    height: 80px;
+}
+.club-site {
+    color: green;
+    font-size: 40px; 
+    text-align: center;
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 768px) {
+    .club-site {
+        font-size: 20px;
+    }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 480px) {
+    .club-site {
+        font-size: 10px;
+    }
+}
+
+.club-logos {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    
+   
+}
+
+.club-logos img {
+    height: 30px;
+    max-height: 10vh;
+    height: 80px;
+    width: auto; 
+}
+
+/* Main Navigation */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4B0082;
+    color: white;
+    padding: 15px 20px;
+}
+
+
+.nav-left {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-item {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sign-in {
+    background: white;
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.sign-in:hover {
+    background: rgb(172, 160, 160);
+}
+
+.search-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Second Navigation */
+.bottom-nav {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: #555;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-left {
+        gap: 15px;
+    }
+
+    .nav-item {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 10px 15px;
+    }
+
+    .nav-left {
+        display: none;
+    }
+
+    .nav-right {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .bottom-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-link {
+        padding: 8px 0;
+    }
+
+    .club-logos {
+        overflow-x: scroll;
+    }
+}
+
+
+
+
+
+/* slider  */
+
+
+#news-slider {
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    overflow: hidden;
+    background-color: black;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.slider-container {
+    
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+/* Active Slide */
+.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    #news-slider {
+        height: 70vh; 
+    }
+
+    .slide {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #news-slider {
+        height: 60vh; 
+    }
+
+    .slide {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #news-slider {
+        height: 50vh; 
+    }
+
+    .slide {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+}
+
+
+
+
+/* player of the week  */
+.week {
+    font-family: sans-serif;
+    background-color: #222;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    color: white;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.pitch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+}
+.formation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+/* margin one after another */
+.forwards, .midfielders, .defenders {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px; /* Space between up downline */
+}
+
+.goalkeeper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 60px; /* More space before gk */
+}
+@media (max-width: 768px) {
+    .forwards, .midfielders, .defenders {
+        gap: 15px; 
+        margin-bottom: 30px; 
+    }
+    
+    .goalkeeper {
+        margin-top: 40px; 
+    }
+
+    .player img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .player span {
+        font-size: 12px;
+    }
+}
+
+/* mobile  */
+@media (max-width: 480px) {
+    .forwards, .midfielders, .defenders {
+        flex-direction: column; 
+        gap: 10px; 
+        margin-bottom: 20px;
+    }
+
+    .goalkeeper {
+        margin-top: 30px;
+    }
+
+    .player img {
+        width: 40px; 
+        height: 40px;
+    }
+
+    .player span {
+        font-size: 10px; /* Reduce text size */
+    }
+}
+
+/* Add margin-bottom to create gaps between lines */
+.forwards {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px; /* Gap before midfielders */
+}
+
+.midfielders {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px; /* Gap before defenders */
+}
+
+.defenders {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px; /* Gap before goalkeeper */
+}
+
+.goalkeeper {
+    display: flex;
+    width: 100%;
+    justify-content: center; /* Goalkeeper is centered */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.player img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; 
+}
+
+.player span {
+    font-size: 14px;
+    text-shadow: 1px 1px black;
+}
+
+/* tab  */
+@media (max-width: 768px) {
+    .week {
+        padding: 15px;
+    }
+    .formation {
+        flex-direction: column;
+        align-items: center;
+    }
+    .player img {
+        width: 40px;
+        height: 40px;
+    }
+    .player span {
+        font-size: 12px;
+    }
+}
+
+
+
+/* player awarddd  */
+
+
+.awards-section {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.awards-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.arrow {
+    color: red;
+    font-weight: bold;
+}
+
+.awards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.award-card {
+    background: linear-gradient(135deg, #402610, #050d24);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.player-info {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.player-img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.award-label {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.golden-boot {
+    background-color: gold;
+    color: black;
+}
+
+.golden-glove {
+    background-color: goldenrod;
+    color: black;
+}
+
+.award-label img {
+    width: 20px;
+}
+
+.player-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.player-position {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.club-name {
+    font-size: 14px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.club-logo {
+    width: 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.stat {
+    text-align: center;
+    font-size: 14px;
+}
+
+.stat span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.week-awards-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px;
+}
+
+
+.week,
+.awards-section {
+    flex: 1;
+}
+
+.pitch {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .week-awards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.awards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+
+/* Styling for award cards */
+.award-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Player image styling */
+.player-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* Award label styling */
+.award-label {
+    font-weight: bold;
+    background: gold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.golden-glove {
+    background: #c99d66;
+}
+
+/* Stats Styling */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.stat {
+    font-weight: bold;
+}
+
+.awards-container {
+    flex-direction: column;
+    gap: 30px;
+}
+
+.award-card {
+    padding: 30px;
+    width: 400px;
+}
+
+.player-img {
+    width: 130px;
+    height: 130px;
+}
+
+.award-label {
+    font-size: 18px;
+    padding: 8px 15px;
+}
+
+.player-name {
+    font-size: 22px;
+}
+
+.stats .stat {
+    font-size: 16px;
+    justify-content: space-between;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.award-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    padding: 8px 15px;
+}
+
+.award-label img {
+    width: 30px;
+    height: auto;
+}
+
+.week-awards-container {
+    font-family: Arial, sans-serif;
+    background-color: #0a1a3a;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+}
+
+.stat {
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+}
+
+.formu {
+    margin: auto;
+    padding: auto;
+    gap: 5px;
+    border-radius: 5px;
+}
+
+.awards-tit {
+    background-color: red;
+}
+
+
+footer {
+    background-color: #f0f0f0; 
+    padding: 20px; 
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+  }
+  
+  .logo img {
+    width: 120px; 
+    height: auto; 
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px; 
+  }
+  
+  .social-icons a img {
+    width: 25px; 
+    height: 25px;
+    filter: grayscale(100%); 
+    transition: filter 0.3s ease; 
+  }
+  
+  .social-icons a:hover img {
+    filter: grayscale(0%);
+  }
+  
+  
+  .fan-zone-button button {
+    background-color: #e0001a; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .fan-zone-button button:hover {
+    background-color: #c00018; 
+  }
+  
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column; 
+      align-items: center; 
+      text-align: center; 
+    }
+  
+    .social-icons {
+      margin-top: 15px; 
+    }
+  
+    .fan-zone-button {
+      margin-top: 15px;   
+      /* butoon-spcae */
+    }
+  }
+
+
+  .copyright{
+    justify-content: center;
+    text-align: center;
+  }
