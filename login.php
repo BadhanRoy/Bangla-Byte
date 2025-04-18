@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premier League - Sign In</title>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-         body {
+        body {
             margin: 0;
             font-family: 'Arial', sans-serif;
             display: flex;
@@ -21,8 +21,8 @@
             position: relative;
             overflow: hidden;
         }
+        
 
-        /* Animated football pitch overlay */
         body::before {
             content: '';
             position: absolute;
@@ -32,13 +32,6 @@
             height: 100%;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(10, 34, 64, 0.9) 100%);
             z-index: 0;
-        }
-
-    
-
-        @keyframes moveLines {
-            0% { background-position: 0 0; }
-            100% { background-position: 1000px 1000px; }
         }
 
         .container {
@@ -121,48 +114,44 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Unified form control styling */
+        /* Input group styling */
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.7);
+            z-index: 2;
+        }
+
         .form-control {
             width: 100%;
-            padding: 14px;
+            padding: 14px 14px 14px 40px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             outline: none;
             font-size: 16px;
             color: #fff;
-            margin-bottom: 20px;
             transition: all 0.3s ease;
             box-sizing: border-box;
         }
 
-        input.form-control:focus, 
-        select.form-control:focus {
+        .form-control:focus {
             border-color: #e0001a;
             background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 0 10px rgba(224, 0, 26, 0.3);
         }
 
-        input.form-control::placeholder {
+        .form-control::placeholder {
             color: rgba(255, 255, 255, 0.7);
         }
 
-        select.form-control {
-            appearance: none;
-           
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 15px;
-        }
-
-        /* Fix for dropdown options visibility */
-        select.form-control option {
-            background: #0a2240;
-            color: white;
-            padding: 10px;
-        }
-
-   
         /* Button styling */
         .form-button {
             width: 100%;
@@ -180,38 +169,6 @@
             letter-spacing: 1px;
             position: relative;
             overflow: hidden;
-            text-align: center;
-            display: block;
-            box-sizing: border-box;
-        }
-
-        .form-button::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            border-radius: 100%;
-            transform: scale(1, 1) translate(-50%, -50%);
-            transform-origin: 50% 50%;
-        }
-
-        .form-button:focus:not(:active)::after {
-            animation: ripple 0.6s ease-out;
-        }
-
-        @keyframes ripple {
-            0% {
-                transform: scale(0, 0);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(20, 20);
-                opacity: 0;
-            }
         }
 
         .form-button:hover {
@@ -220,21 +177,64 @@
             box-shadow: 0 5px 15px rgba(224, 0, 26, 0.3);
         }
 
-        p {
-            font-size: 14px;
+        .or-divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .or-divider::before,
+        .or-divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .or-divider span {
+            padding: 0 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-icon:hover {
+            background: #e0001a;
+            transform: translateY(-3px);
+        }
+
+        .form-footer {
             text-align: center;
-            margin-bottom: 10px;
+            font-size: 14px;
             color: rgba(255, 255, 255, 0.8);
         }
 
-        p a {
+        .form-footer a {
             color: #e0001a;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
-        p a:hover {
+        .form-footer a:hover {
             color: #ff3333;
             text-decoration: underline;
         }
@@ -259,7 +259,10 @@
                 font-size: 24px;
             }
             
-            .form-control,
+            .form-control {
+                padding: 12px 12px 12px 40px;
+            }
+            
             .form-button {
                 padding: 12px;
             }
@@ -268,22 +271,73 @@
                 height: 50px;
             }
         }
+
+        /* Message styling */
+        .message {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+
+        .message.success {
+            background-color: rgba(0, 200, 0, 0.2);
+            border: 1px solid rgba(0, 200, 0, 0.5);
+            color: #0f0;
+        }
+
+        .message.error {
+            background-color: rgba(200, 0, 0, 0.2);
+            border: 1px solid rgba(200, 0, 0, 0.5);
+            color: #f00;
+        }
     </style>
 </head>
 <body>
-    <!-- Your existing login page content -->
     <div class="container">
         <div class="form-box active" id="login-form"> 
             <div class="logo-header">
                 <img src="assets/images/club/BPL.png" alt="Premier League Logo">
             </div>
-            <form id="loginForm" method="POST">
+            <form id="loginForm" method="POST" action="register.php">
                 <h2>Login</h2>
-                <div id="loginMessage" class="message" style="display: none;"></div>
-                <input type="email" name="email" class="form-control" placeholder="Email" required>
-                <input type="password" name="password" class="form-control" placeholder="Password" required>
-                <button type="submit" class="form-button" name="login">Login</button>
-                <p>Don't have an account? <a href="#" onclick="showForm('register-form')">Register</a></p>
+                <?php if(isset($_GET['error']) && $_GET['error'] == 'login'): ?>
+                <div class="message error">Incorrect email or password</div>
+                <?php endif; ?>
+                
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                </div>
+                
+                <p class="form-footer">
+                    <a href="#">Recover Password</a>
+                </p>
+                
+                <button type="submit" class="form-button" name="signIn">Sign In</button>
+                
+                <div class="or-divider">
+                    <span>OR</span>
+                </div>
+                
+                <div class="social-icons">
+                    <div class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                </div>
+                
+                <p class="form-footer">
+                    Don't have an account? <a href="#" onclick="showForm('register-form')">Sign Up</a>
+                </p>
             </form>
         </div>
 
@@ -291,99 +345,62 @@
             <div class="logo-header">
                 <img src="assets/images/club/BPL.png" alt="Premier League Logo">
             </div>
-            <form id="registerForm" method="POST">
+            <form id="registerForm" method="POST" action="register.php">
                 <h2>Register</h2>
-                <div id="registerMessage" class="message" style="display: none;"></div>
-                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-                <input type="email" name="email" class="form-control" placeholder="Email" required>
-                <input type="password" name="password" class="form-control" placeholder="Password" required>
-                <select name="role" class="form-control" required>
-                    <option value="">--Select Role--</option>
-                    <option value="user">User</option>
-                    <option value="admin">Admin</option>
-                </select>
-                <button type="submit" class="form-button" name="register">Join The League</button>
-                <p>Already have an account? <a href="#" onclick="showForm('login-form')">Login</a></p>
+                <?php if(isset($_GET['error']) && $_GET['error'] == 'email_exists'): ?>
+                <div class="message error">Email address already exists!</div>
+                <?php endif; ?>
+                
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="fName" class="form-control" placeholder="First Name" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="lName" class="form-control" placeholder="Last Name" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                </div>
+                
+                <button type="submit" class="form-button" name="signUp">Sign Up</button>
+                
+                <div class="or-divider">
+                    <span>OR</span>
+                </div>
+                
+                <div class="social-icons">
+                    <div class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                </div>
+                
+                <p class="form-footer">
+                    Already have an account? <a href="#" onclick="showForm('login-form')">Sign In</a>
+                </p>
             </form>
         </div>
     </div>
 
     <script>
-        // Your existing JavaScript with AJAX calls
         function showForm(formId) {
             document.querySelectorAll('.form-box').forEach(form => {
                 form.classList.remove('active');
             });
             document.getElementById(formId).classList.add('active');
-            document.getElementById('loginMessage').style.display = 'none';
-            document.getElementById('registerMessage').style.display = 'none';
             return false;
         }
-
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            
-            fetch('process_login.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                const messageElement = document.getElementById('loginMessage');
-                messageElement.style.display = 'block';
-                
-                if (data.success) {
-                    messageElement.className = 'message success';
-                    messageElement.textContent = data.message;
-                    setTimeout(() => {
-                        window.location.href = data.redirect || 'dashboard.php';
-                    }, 1500);
-                } else {
-                    messageElement.className = 'message error';
-                    messageElement.textContent = data.message;
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                const messageElement = document.getElementById('loginMessage');
-                messageElement.style.display = 'block';
-                messageElement.className = 'message error';
-                messageElement.textContent = 'An error occurred. Please try again.';
-            });
-        });
-
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            
-            fetch('process_register.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                const messageElement = document.getElementById('registerMessage');
-                messageElement.style.display = 'block';
-                
-                if (data.success) {
-                    messageElement.className = 'message success';
-                    messageElement.textContent = data.message;
-                    this.reset();
-                    setTimeout(() => showForm('login-form'), 2000);
-                } else {
-                    messageElement.className = 'message error';
-                    messageElement.textContent = data.message;
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                const messageElement = document.getElementById('registerMessage');
-                messageElement.style.display = 'block';
-                messageElement.className = 'message error';
-                messageElement.textContent = 'An error occurred. Please try again.';
-            });
-        });
     </script>
 </body>
 </html>
