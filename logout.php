@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// unset session variables
+$_SESSION = array();
+
 session_destroy();
-header("location: index.php");
+
+// return login page
+header("Location: login.php");
+exit();
 ?>
