@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPL Dashboard | Bangladesh Premier League</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #006A4E; /* BPL Green */
+            --secondary: #F42A41; /* BPL Red */
+            --accent: #3C78D8;
+            --bg-dark: #0F172A;
+            --card-bg: #1E293B;
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Light Mode */
+        .light-mode {
+            --bg-dark: #F1F5F9;
+            --card-bg: #FFFFFF;
+            --text-light: #1E293B;
+            --text-muted: #64748B;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        /* Header & Navbar */
+        .navbar {
+            background-color: var(--primary);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Cards */
+        .dashboard-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-header .icon {
+            color: var(--accent);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: #D91E36;
+            transform: translateY(-2px);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        /* Match List */
+        .match-list {
+            list-style: none;
+        }
+
+        .match-item {
+            padding: 1rem 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .match-item:last-child {
+            border-bottom: none;
+        }
+
+        .team {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 40%;
+        }
+
+        .team-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .score {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .live-badge {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* News Cards */
+        .news-item {
+            margin-bottom: 1rem;
+        }
+
+        .news-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-excerpt {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-date {
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="assets/images/club/BPL.png" alt="BPL Logo">
+            <a href="explore.php"><span class="logo-text" style="text-decoration: none;">Bangladesh Premier League</span></a>
+        </a>
+
+        <div class="nav-links">
+            <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="matches.html"><i class="fas fa-calendar-alt"></i> Matches</a>
+            <a href="standings.html"><i class="fas fa-trophy"></i> Standings</a>
+            <a href="teams.html"><i class="fas fa-users"></i> Teams</a>
+            <a href="news.html"><i class="fas fa-newspaper"></i> News</a>
+        </div>
+
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/40" alt="User Avatar" class="user-avatar">
+                <span style="color: white;"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <div class="container">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner dashboard-card">
+            <div class="card-body">
+                <h1>Welcome to <span style="color: var(--secondary);">BPL 2024</span> Dashboard</h1>
+                <p>Track live scores, standings, and news from Bangladesh Premier League</p>
+            </div>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Live Matches -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-fire icon"></i> Live Matches</h3>
+                    <a href="live.html" class="btn">View All</a>
+                </div>
+                <div class="card-body">
+                    <ul class="match-list">
+                        <li class="match-item">
+                            <div class="team">
+                                <img src="https://seeklogo.com/images/B/bashundhara-kings-logo-9A3D0F6E5F-seeklogo.com.png" alt="Bashundhara Kings" class="team-logo">
+                                <span>BDK</span>
+                            </div>
+                            <div class="score">2 - 1</div>
+                            <div class="team">
+                                <img src="https://seeklogo.com/images/A/abahani-limited-dhaka-logo-CB1F5E8D1E-seeklogo.com.png" alt="Abahani Dhaka" class="team-logo">
+                                <span>ABH</span>
+                            </div>
+                            <span class="live-badge">LIVE 75'</span>
+                        </li>
+                        <li class="match-item">
+                            <div class="team">
+                                <img src="https://seeklogo.com/images/M/mohammedan-sc-logo-9A5C9F6D4E-seeklogo.com.png" alt="Mohammedan SC" class="team-logo">
+                                <span>DMN</span>
+                            </div>
+                            <div class="score">1 - 1</div>
+                            <div class="team">
+                                
+                                <span>Police
+                                    <img src="https://seeklogo.com/images/S/sheikh-russell-kc-logo-3D0A9E1C8A-seeklogo.com.png" alt="" class="team-logo">
+                            </div>
+                            <span class="live-badge">LIVE 60'</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+           
+
+            <!-- Top Scorers -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-star icon"></i> Top Scorers</h3>
+                    <a href="stats.html" class="btn">View All</a>
+                </div>
+                <div class="card-body">
+                    <ul class="match-list">
+                        <li class="match-item">
+                            <div class="team">
+                                <img src="https://via.placeholder.com/24" alt="Player" class="team-logo">
+                                <span>Al Amin</span>
+                            </div>
+                            <span>12 Goals</span>
+                        </li>
+                        <li class="match-item">
+                            <div class="team">
+                                <img src="https://via.placeholder.com/24" alt="Player" class="team-logo">
+                                <span>Al Amin</span>
+                            </div>
+                            <span>9 Goals</span>
+                        </li>
+                        <li class="match-item">
+                            <div class="team">
+                                <img src="https://via.placeholder.com/24" alt="Player" class="team-logo">
+                                <span>Al Amin</span>
+                            </div>
+                            <span>7 Goals</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Latest News -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-newspaper icon"></i> Latest News</h3>
+                    <a href="news.html" class="btn">Read More</a>
+                </div>
+                <div class="card-body">
+                    <div class="news-item">
+                        <h4>Bashundhara Kings extend lead at the top</h4>
+                        <p class="news-excerpt">The defending champions secure another victory to go 5 points clear...</p>
+                        <span class="news-date">2 hours ago</span>
+                    </div>
+                    <div class="news-item">
+                        <h4>Abahani signs Brazilian striker</h4>
+                        <p class="news-excerpt">The six-time champions announce the signing of Rafael Silva...</p>
+                        <span class="news-date">1 day ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Dark/Light Mode -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    </script>
+</body>
+</html>
