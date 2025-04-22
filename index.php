@@ -24,7 +24,7 @@
         <div class="club-logos">
             <img src="assets/images/club/abahani.png" alt="Abahani">
             <img src="assets/images/club/mohamedan.png" alt="Mohamedan">
-            <img src="assets/images/club/kings.png" alt="Bashundhara Kings">
+            <a href="clubweb/bdk.php"><img src="assets/images/club/kings.png" alt="Bashundhara Kings"></a>
             <img src="assets/images/club/fakirapool.png" alt="Fakirapool">
             <img src="assets/images/club/police.png" alt="MBangladesh Police">
             <img src="assets/images/club/rahmatgonj.png" alt="Rahmatgonj MFS">
@@ -55,15 +55,23 @@
     </nav>
 
     <!-- Secondary Navigation -->
-    <div class="bottom-nav">
-        <span class="nav-link">Home</span>
-        <span class="nav-link">Fixtures</span>
+         <div class="bottom-nav">
+            <span class="nav-link">Home</span>
+            <a href="matchweek.php" style="text-decoration: none;">
+            <span class="nav-link">Fixtures</span>
+            </a>
         <span class="nav-link">Results</span>
-        <span class="nav-link">Tables</span>
-        <span class="nav-link">Transfers</span>
+        <a href="table.php" style="text-decoration: none;">
+            <span class="nav-link">Tables</span>
+        </a>
+        <a href="transfer.php" style="text-decoration: none;">
+            <span class="nav-link">Transfers</span>
+        </a>
         <span class="nav-link">Stats</span>
         <span class="nav-link">News</span>
-        <span class="nav-link">Video</span>
+        <a href="video.php" style="text-decoration: none;">
+            <span class="nav-link">Video</span>
+        </a>
         <span class="nav-link">Watch Live</span>
         <span class="nav-link">Tickets</span>
         <span class="nav-link">Clubs</span>

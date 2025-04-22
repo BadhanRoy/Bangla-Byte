@@ -19,17 +19,18 @@ $lastName = $_SESSION['lastName'] ?? '';
     <title>User Dashboard - Virtual Striker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Your existing styles */
+       
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url("assets/images/club/stadium/kings.jpg");
+            background-image: url("assets/images/club/backimg.webp");
             background-size: cover;
             background-position: center;
             color: white;
             min-height: 100vh;
             position: relative;
+
         }
         
         body::before {
@@ -59,6 +60,7 @@ $lastName = $_SESSION['lastName'] ?? '';
             margin: 50px auto;
             max-width: 800px;
             border: 2px solid #e0001a;
+            top: 100px;
         }
 
         .welcome-title {
