@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="container">
         <div class="form-box active" id="login-form"> 
             <div class="logo-header">
-                <img src="assets/images/club/BPL.png" alt="Premier League Logo">
+                <a href="index.php"><img src="assets/images/pic.jpeg" alt="Bangla Byte"></a>
             </div>
             <form id="loginForm" method="POST" action="login.php">
                 <h2>Login</h2>
@@ -167,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="form-box" id="register-form">
             <div class="logo-header">
-                <img src="assets/images/club/BPL.png" alt="Premier League Logo">
+                <img src="assets/images/pic.jpeg" alt="Premier League Logo">
             </div>
             <form id="registerForm" method="POST" action="login.php">
                 <h2>Register</h2>
@@ -197,14 +197,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="password" name="password" class="form-control" placeholder="Password" required minlength="6">
                 </div>
                 
-                <div class="input-group">
+
+                <!-- selcet role part  -->
+                 
+                <!-- <div class="input-group">
                     <i class="fas fa-user-tag"></i>
                     <select name="role" class="form-control" required size="1">
                         <option value="" disabled selected>Select Role</option>
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                     </select>
-                </div>
+                </div> -->
                 
                 <button type="submit" class="form-button" name="signUp">Sign Up</button>
                 

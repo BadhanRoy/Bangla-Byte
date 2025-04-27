@@ -117,10 +117,16 @@ $lastName = $_SESSION['lastName'] ?? '';
             <p>You have successfully logged in to Virtual Striker as a regular user</p>
             
             <div class="btn-container">
-                <a href="explore.php" class="btn">Explore More</a>
+            <div class="d-grid gap-2 mt-3">
+    <!-- ... other buttons ... -->
+    <a href="explore.php" class="btn btn-outline-secondary">
+        <i class="fas fa-compass"></i> Explore More
+    </a>
+</div>
                 <a href="logout.php" class="btn">Logout</a>
             </div>
         </div>
     </div>
 </body>
 </html>
+
