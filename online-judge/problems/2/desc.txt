@@ -1,0 +1,4 @@
+Write a program that calculates the factorial of a given number.
+
+Input: A single integer n (0 <= n <= 10)
+Output: The factorial of n

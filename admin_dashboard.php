@@ -178,15 +178,15 @@ $lastName = $_SESSION['lastName'] ?? '';
             
             <div class="admin-actions">
                 <div class="admin-card">
-                    <h3 class="card-title">User Management</h3>
-                    <p class="card-desc">View, edit, and manage all user accounts in the system.</p>
-                    <a href="manage_users.php" class="btn">Manage Users</a>
+                    <h3 class="card-title">Set problems</h3>
+                    <p class="card-desc">View, edit, and manage all problems.</p>
+                    <a href="admin/add_problem.php" class="btn">Manage problems</a>
                 </div>
                 
                 <div class="admin-card">
-                    <h3 class="card-title">Content Management</h3>
+                    <h3 class="card-title">Watch all problems</h3>
                     <p class="card-desc">Control all website content, including news and updates.</p>
-                    <a href="manage_content.php" class="btn">Manage Content</a>
+                    <a href="admin/problems/index.php" class="btn">Manage Content</a>
                 </div>
                 
                 <div class="admin-card">

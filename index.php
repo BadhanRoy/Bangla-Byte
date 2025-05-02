@@ -20,7 +20,7 @@
                 <ul>
                     <li><a href="index.php"><i class="fas fa-home"></i> হোম</a></li>
                     <li><a href="view.php"><i class="fas fa-trophy"></i> প্রতিযোগিতা</a></li>
-                    <li><a href="add_problem.php"><i class="fas fa-question-circle"></i> সমস্যা</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> সমস্যা</a></li>
                     <li><a href="leaderboard.php"><i class="fas fa-medal"></i> লিডারবোর্ড</a></li>
                     
                     <li><a href="login.php" class="btn-login"><i class="fas fa-user"></i> লগ ইন</a></li>
@@ -49,15 +49,18 @@
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>কেন Bangla Byte বেছে নেবেন?</h2>
+                <h2>কেন Bangla Byte বেছে নেবেন?</h2> 
                 <p>বাংলাদেশের শিক্ষার্থীদের জন্য তৈরি বিশেষ সুবিধাসমূহ</p>
             </div>
             <div class="feature-grid">
+            <a href="visual/index.php" style="text-decoration: none; color: inherit;">
     <div class="feature-card">
         <i class="fas fa-project-diagram"></i>
         <h3>অ্যালগরিদম ভিজ্যুয়ালাইজার</h3>
         <p>অ্যালগরিদম কীভাবে কাজ করে তা ভিজ্যুয়াল এনিমেশনের মাধ্যমে বুঝুন, বাংলায় ব্যাখ্যা সহ</p>
     </div>
+</a>
+
     <div class="feature-card">
         <i class="fas fa-bug"></i>
         <h3>দৈনিক এরর পাজল</h3>

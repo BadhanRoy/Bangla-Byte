@@ -114,7 +114,7 @@ $lastName = $_SESSION['lastName'] ?? '';
             <h1 class="welcome-title">
                 Welcome User, <span class="user-name"><?php echo htmlspecialchars($firstName . ' ' . $lastName); ?></span>!
             </h1>
-            <p>You have successfully logged in to Virtual Striker as a regular user</p>
+            <p>You have successfully logged in to Bangla Byte a regular user</p>
             
             <div class="btn-container">
             <div class="d-grid gap-2 mt-3">

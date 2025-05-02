@@ -1,0 +1,4 @@
+Write a program that takes two integers as input and outputs their sum.
+
+Input: Two space-separated integers
+Output: Their sum

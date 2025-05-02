@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.back-button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
+
+.problem-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.problem-list li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #4CAF50;
+}
+
+.problem-list li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.problem-list li:hover {
+    background-color: #eee;
+}
+
+.problem-section {
+    margin-bottom: 30px;
+}
+
+.problem-section pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #4CAF50;
+}
+
+.submission-section {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.form-group textarea {
+    min-height: 200px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.result-section {
+    margin-top: 20px;
+}
+
+.result-box {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.result-box.accepted {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border-left: 4px solid #3c763d;
+}
+
+.result-box.failed {
+    background-color: #f2dede;
+    color: #a94442;
+    border-left: 4px solid #a94442;
+}
