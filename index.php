@@ -13,7 +13,7 @@
     <header id="header">
         <div class="container header-container">
             <div class="logo">
-                <img src="assets/images/logo.jpeg" alt="Bangla Byte লোগো">
+                <h2>Bangla Byte</h2>
                 
             </div>
             <nav>
