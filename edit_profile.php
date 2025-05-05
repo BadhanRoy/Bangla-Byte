@@ -3,10 +3,7 @@ session_start();
 include 'connect.php';
 
 // Redirect if not logged in
-if(!isset($_SESSION['id'])) {
-    header("Location: login.php");
-    exit();
-}
+
 
 // Get current user data
 $userId = $_SESSION['id'];

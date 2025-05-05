@@ -1,56 +1,57 @@
 <?php
-class Compiler {
+class PythonCompiler {
     private $code;
-    private $input;
-    private $workingDir = "submissions/";
-
-    public function __construct($code, $input = '') {
+    
+    public function __construct($code) {
         $this->code = $code;
-        $this->input = $input;
     }
-
-    public function compileAndRun() {
-        $fileName = uniqid('code_');
-
-        if (!file_exists($this->workingDir)) {
-            mkdir($this->workingDir, 0777, true);
-        }
-
-        $sourceFile = $this->workingDir . $fileName . '.c';
-        $binaryFile = $this->workingDir . $fileName . '.out';
-        $inputFile = $this->workingDir . $fileName . '.in';
-
-        // Save source code
-        file_put_contents($sourceFile, $this->code);
-
-        // Save input if exists
-        if (!empty($this->input)) {
-            file_put_contents($inputFile, $this->input);
-        }
-
-        // Compile
-        $compileCmd = "gcc " . escapeshellarg($sourceFile) . " -o " . escapeshellarg($binaryFile) . " 2>&1";
-        $compileOutput = shell_exec($compileCmd);
-
-        if (!empty($compileOutput)) {
-            // Compilation Error
-            return [
-                'status' => 'Compilation Error',
-                'output' => $compileOutput
+    
+    public function runTestCases($testCases) {
+        $results = [];
+        $passedCases = 0;
+        
+        foreach ($testCases as $testCase) {
+            $input = $testCase['input'];
+            $expectedOutput = trim($testCase['output']);
+            
+            // Create a temporary file for the Python code
+            $tempFile = tempnam(sys_get_temp_dir(), 'python_code_');
+            file_put_contents($tempFile, $this->code);
+            
+            // Create a temporary file for the input
+            $inputFile = tempnam(sys_get_temp_dir(), 'python_input_');
+            file_put_contents($inputFile, $input);
+            
+            // Prepare the command to run the Python code with input
+            $command = "python3 " . escapeshellarg($tempFile) . " < " . escapeshellarg($inputFile) . " 2>&1";
+            
+            // Execute the command and capture output
+            $output = shell_exec($command);
+            $actualOutput = trim($output ?? '');
+            
+            // Clean up temporary files
+            unlink($tempFile);
+            unlink($inputFile);
+            
+            // Compare actual output with expected output
+            $isCorrect = ($actualOutput === $expectedOutput);
+            
+            if ($isCorrect) {
+                $passedCases++;
+            }
+            
+            $results[] = [
+                'input' => $input,
+                'expected_output' => $expectedOutput,
+                'actual_output' => $actualOutput,
+                'is_correct' => $isCorrect
             ];
         }
-
-        // Run
-        if (!empty($this->input)) {
-            $runCmd = escapeshellarg($binaryFile) . " < " . escapeshellarg($inputFile) . " 2>&1";
-        } else {
-            $runCmd = escapeshellarg($binaryFile) . " 2>&1";
-        }
-        $runOutput = shell_exec($runCmd);
-
+        
         return [
-            'status' => 'Success',
-            'output' => trim($runOutput)
+            'total_cases' => count($testCases),
+            'passed_cases' => $passedCases,
+            'results' => $results
         ];
     }
 }

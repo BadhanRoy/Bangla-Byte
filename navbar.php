@@ -28,6 +28,9 @@ $lastName = $_SESSION['lastName'] ?? '';
                 <li class="nav-item">
                     <a class="nav-link" href="problems.php"><i class="fas fa-question-circle"></i> Problems</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="><i class="fas fa-question-circle"></i> Contest</a>
+                </li>
             </ul>
             
             <ul class="navbar-nav ms-auto">

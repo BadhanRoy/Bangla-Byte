@@ -61,11 +61,15 @@
     </div>
 </a>
 
+<a href="error-finding/index.php" style="text-decoration: none; color: inherit;">
     <div class="feature-card">
         <i class="fas fa-bug"></i>
         <h3>দৈনিক এরর পাজল</h3>
         <p>প্রতিদিন নতুন কোডিং সমস্যা সমাধান করুন এবং বাংলায় এরর বিশ্লেষণ শিখুন</p>
     </div>
+    </a>
+
+
     <div class="feature-card">
         <i class="fas fa-brain"></i>
         <h3>লজিক বিল্ডিং এক্সারসাইজ</h3>
@@ -187,7 +191,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Bangla Byte. সর্বস্বত্ব সংরক্ষিত | তৈরি করেছেন বাংলাদেশের শিক্ষার্থীদের জন্য</p>
+                <p>&copy; 2025 Bangla Byte. সর্বস্বত্ব সংরক্ষিত | তৈরি করেছেন বাংলাদেশের শিক্ষার্থীদের জন্য</p>
             </div>
         </div>
     </footer>

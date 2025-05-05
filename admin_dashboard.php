@@ -64,7 +64,7 @@ $lastName = $_SESSION['lastName'] ?? '';
             padding: 40px;
             border-radius: 15px;
             margin-bottom: 30px;
-            border: 2px solid #e0001a;
+            border: 2px solid green;
         }
 
         .welcome-title {
@@ -74,7 +74,7 @@ $lastName = $_SESSION['lastName'] ?? '';
         }
 
         .user-name {
-            color: #e0001a;
+            color: green;
             font-weight: bold;
         }
 
@@ -116,7 +116,7 @@ $lastName = $_SESSION['lastName'] ?? '';
         .card-title {
             font-size: 1.2rem;
             margin-bottom: 15px;
-            color: #e0001a;
+            
         }
 
         .card-desc {
@@ -126,7 +126,7 @@ $lastName = $_SESSION['lastName'] ?? '';
 
         .btn {
             display: inline-block;
-            background: #e0001a;
+            background: green;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -136,12 +136,12 @@ $lastName = $_SESSION['lastName'] ?? '';
         }
 
         .btn:hover {
-            background: #c00018;
+           
             transform: translateY(-2px);
         }
 
         .btn-secondary {
-            background: #0a2240;
+            background: green;
         }
 
         .btn-secondary:hover {
@@ -190,9 +190,9 @@ $lastName = $_SESSION['lastName'] ?? '';
                 </div>
                 
                 <div class="admin-card">
-                    <h3 class="card-title">System Settings</h3>
+                    <h3 class="card-title">Contests</h3>
                     <p class="card-desc">Configure system-wide settings and preferences.</p>
-                    <a href="system_settings.php" class="btn btn-secondary">Settings</a>
+                    <a href="contest/problem.php" class="btn btn-secondary">contest</a>
                 </div>
                 
                 <div class="admin-card">
