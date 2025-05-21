@@ -1,0 +1,1 @@
+A competitive programming platform for students, especially for Bangladeshi students who aren’t comfortable with English. We want to give them a kickstart so they can excel in competitive programming.
